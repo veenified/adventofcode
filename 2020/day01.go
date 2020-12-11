@@ -6,10 +6,18 @@ import (
 	"github.com/veenified/adventofcode/utils"
 )
 
-var day01Input = utils.Input(2020, 1)
-var inputInts = utils.ExtractInts(day01Input)
-
 func day01() {
+	var testInput = `1721
+	979
+	366
+	299
+	675
+	1456`
+
+	var input = testInput
+	input = utils.Input(2020, 1)
+	var inputInts = utils.ExtractInts(input)
+
 out:
 	for _, i := range inputInts {
 		for _, j := range inputInts {
