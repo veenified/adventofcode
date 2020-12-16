@@ -133,3 +133,15 @@ func Count(x int, y int, fn func(i int) bool) (c int) {
 	}
 	return
 }
+
+// IntToBool returns a bool representation of int i
+func IntToBool(i int) bool { return i != 0 }
+
+// BoolToInt returns an int representation of a bool b
+func BoolToInt(b bool) int { return map[bool]int{false: 0, true: 1}[b] }
+
+// isNumInRange returns bool if string s is a number and is between ints l and h
+func isNumInRange(s string, l, h int) bool {
+	n, err := strconv.Atoi(s)
+	return err == nil && l <= n && n <= h
+}
