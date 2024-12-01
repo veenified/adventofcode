@@ -15,3 +15,8 @@
 # vendor/
 
 *_input.txt
+
+# Python
+.python-version
+.venv
+__pycache__
