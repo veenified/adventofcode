@@ -1,5 +1,6 @@
 import os
 import time
+import timeit
 from datetime import datetime, timedelta
 import requests
 
@@ -41,3 +42,16 @@ def get_input(year, day):
 
     # Return the input data
     return read_input(filename)
+
+def run_parts(part1, part2, year, day):
+    input = get_input(year, day)
+    inputList = [line for line in input.split('\n') if line.strip()]
+    start = timeit.default_timer()
+    print(f"Part 1 Answer: {part1(inputList)}")
+    end = timeit.default_timer()
+    print(f"Part 1 Elapsed time: {end-start:,.4f} seconds\n")
+
+    start = timeit.default_timer()
+    print(f"Part 2 Answer: {part2(inputList)}")
+    end = timeit.default_timer()
+    print(f"Part 2 Elapsed time: {end-start:,.4f} seconds\n")
