@@ -2,7 +2,8 @@
 from utils.utils import get_input
 
 # Test input
-testInput = """3   4
+testInput = """
+3   4
 4   3
 2   5
 1   3
@@ -19,10 +20,10 @@ dayInput = problemInput
 # split testInput into two lists, leftList and rightList
 leftList = []
 rightList = []
-for line in dayInput.split('\n'):
+for line in dayInput.split("\n"):
     if line.strip():  # Only process non-empty lines
-        leftList.append(int(line.split('   ')[0]))
-        rightList.append(int(line.split('   ')[1]))
+        leftList.append(int(line.split("   ")[0]))
+        rightList.append(int(line.split("   ")[1]))
 
 # sort both lists
 leftList.sort()

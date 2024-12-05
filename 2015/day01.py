@@ -1,16 +1,15 @@
 from collections import Counter
 import timeit
-from typing import List
 from utils.utils import run_parts
 
 
-def part1(input_lines: List[str]):
+def part1(input_lines: list[str]):
     instructions = input_lines[0]
     counter = Counter(instructions)
     return counter.get("(") - counter.get(")")
 
 
-def part2(input_lines: List[str]):
+def part2(input_lines: list[str]):
     location = 0
     instructions = input_lines[0]
     for i, item in enumerate(instructions, start=1):

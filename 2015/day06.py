@@ -2,7 +2,6 @@ from collections import defaultdict
 from itertools import product
 import re
 import timeit
-from typing import List
 
 from utils.utils import run_parts
 
@@ -41,18 +40,19 @@ def run_santa_instruction(grid, line, part2):
         grid[coord] = op(grid[coord])
 
 
-def part1(input_lines: List[str]):
+def part1(input_lines: list[str]):
     grid = defaultdict(bool)
     for line in input_lines:
         run_santa_instruction(grid, line, part2=False)
     return len([k for k in grid if grid[k]])
 
 
-def part2(input_lines: List[str]):
+def part2(input_lines: list[str]):
     grid = defaultdict(int)
     for line in input_lines:
         run_santa_instruction(grid, line, part2=True)
     return sum(grid.values())
+
 
 if __name__ == "__main__":
     run_parts(part1, part2, 2015, 6)

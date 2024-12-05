@@ -1,8 +1,8 @@
-from typing import List
 from utils.utils import run_parts
 
 
 testInput = "111221"
+
 
 def look_and_say(input_str: str):
     curr_chr = ""
@@ -18,17 +18,20 @@ def look_and_say(input_str: str):
     result += f"{curr_chr_cnt}{curr_chr}"
     return result[1:]
 
-def part1(input_lines: List[str]):
+
+def part1(input_lines: list[str]):
     result = input_lines[0]
     for i in range(40):
         result = look_and_say(result)
     return len(result)
 
-def part2(input_lines: List[str]):
+
+def part2(input_lines: list[str]):
     result = input_lines[0]
     for i in range(50):
         result = look_and_say(result)
     return len(result)
+
 
 if __name__ == "__main__":
     # print(look_and_say(testInput))

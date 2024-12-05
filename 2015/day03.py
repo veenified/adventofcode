@@ -1,7 +1,5 @@
-
 from collections import defaultdict
 import timeit
-from typing import List
 from utils.utils import run_parts
 
 
@@ -18,7 +16,7 @@ def move(current, direction):
     return new
 
 
-def part1(input_lines: List[str]):
+def part1(input_lines: list[str]):
     presents = defaultdict(int)
     current = (0, 0)
     presents[current] += 1
@@ -29,7 +27,7 @@ def part1(input_lines: List[str]):
     return len(presents)
 
 
-def part2(input_lines: List[str]):
+def part2(input_lines: list[str]):
     presents = defaultdict(int)
     santa = (0, 0)
     robot = (0, 0)
@@ -43,6 +41,7 @@ def part2(input_lines: List[str]):
             robot = move(robot, direction)
             presents[robot] += 1
     return len(presents)
+
 
 if __name__ == "__main__":
     run_parts(part1, part2, 2015, 3)

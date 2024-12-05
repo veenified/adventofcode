@@ -4,9 +4,11 @@ import timeit
 from datetime import datetime, timedelta
 import requests
 
+
 def read_input(filename):
     with open(filename, "r") as f:
         return f.read()
+
 
 def get_input(year, day):
     filename = f"{year}/day{day:02d}_input.txt"
@@ -20,7 +22,9 @@ def get_input(year, day):
         # Sleep if the puzzle isn't unlocked yet
         time_until_unlock = (target_time - datetime.utcnow()).total_seconds()
         if time_until_unlock > 0:
-            print(f"Puzzle not unlocked yet! Sleeping for {time_until_unlock} seconds...")
+            print(
+                f"Puzzle not unlocked yet! Sleeping for {time_until_unlock} seconds..."
+            )
             time.sleep(time_until_unlock + 3)  # Extra buffer to avoid firing too early
 
         print("Downloading input...")
@@ -34,7 +38,9 @@ def get_input(year, day):
         response = requests.get(url, headers=headers)
 
         if response.status_code != 200:
-            raise RuntimeError(f"Failed to fetch input: {response.status_code} {response.reason}")
+            raise RuntimeError(
+                f"Failed to fetch input: {response.status_code} {response.reason}"
+            )
 
         # Write the input data to a file
         with open(filename, "w") as f:
@@ -43,9 +49,10 @@ def get_input(year, day):
     # Return the input data
     return read_input(filename)
 
+
 def run_parts(part1, part2, year, day):
     input = get_input(year, day)
-    inputList = [line for line in input.split('\n') if line.strip()]
+    inputList = [line for line in input.split("\n") if line.strip()]
     start = timeit.default_timer()
     print(f"Part 1 Answer: {part1(inputList)}")
     end = timeit.default_timer()

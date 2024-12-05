@@ -1,5 +1,4 @@
 from hashlib import md5
-from typing import List
 import timeit
 from utils.utils import run_parts
 
@@ -15,14 +14,15 @@ def match_md5_zeroes(key, count=5):
     raise ValueError("Could not find a match")
 
 
-def part1(input_lines: List[str]):
+def part1(input_lines: list[str]):
     key = input_lines[0].encode("utf-8")
     return match_md5_zeroes(key, count=5)
 
 
-def part2(input_lines: List[str]):
+def part2(input_lines: list[str]):
     key = input_lines[0].encode("utf-8")
     return match_md5_zeroes(key, count=6)
+
 
 if __name__ == "__main__":
     run_parts(part1, part2, 2015, 4)

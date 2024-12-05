@@ -1,7 +1,7 @@
 from collections import Counter, defaultdict
 import timeit
-from typing import List
 from utils.utils import run_parts
+
 
 def is_nice(line):
     counter = Counter(line)
@@ -38,12 +38,13 @@ def is_nice_part2(line):
     return True
 
 
-def part1(input_lines: List[str]):
+def part1(input_lines: list[str]):
     return len([i for i in input_lines if is_nice(i)])
 
 
-def part2(input_lines: List[str]):
+def part2(input_lines: list[str]):
     return len([i for i in input_lines if is_nice_part2(i)])
+
 
 if __name__ == "__main__":
     run_parts(part1, part2, 2015, 5)

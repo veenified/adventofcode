@@ -1,6 +1,5 @@
 import functools
 import re
-from typing import List
 from utils.utils import run_parts
 
 
@@ -41,20 +40,21 @@ def create_value_func(rules):
     return get_value
 
 
-def part1(input_lines: List[str]):
+def part1(input_lines: list[str]):
     matched_groups = [re.match("(.*) -> (.*)", line).groups() for line in input_lines]
     rules = dict(reversed(match) for match in matched_groups)
     get_value = create_value_func(rules)
     return get_value("a")
 
 
-def part2(input_lines: List[str]):
+def part2(input_lines: list[str]):
     matched_groups = [re.match("(.*) -> (.*)", line).groups() for line in input_lines]
     rules = dict(reversed(match) for match in matched_groups)
     part1_result = part1(input_lines)
     rules["b"] = str(part1_result)
     get_value = create_value_func(rules)
     return get_value("a")
+
 
 if __name__ == "__main__":
     run_parts(part1, part2, 2015, 7)

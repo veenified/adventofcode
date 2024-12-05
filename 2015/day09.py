@@ -1,15 +1,17 @@
 from itertools import permutations
-from typing import List
 import networkx as nx
 
 from utils.utils import run_parts
 
 
-testInput = """London to Dublin = 464
+testInput = """
+London to Dublin = 464
 London to Belfast = 518
-Dublin to Belfast = 141"""
+Dublin to Belfast = 141
+"""
 
-def get_all_distances(input_lines: List[str]):
+
+def get_all_distances(input_lines: list[str]):
     G = nx.Graph()
     for line in input_lines:
         locations, distance = line.split(" = ")
@@ -25,12 +27,14 @@ def get_all_distances(input_lines: List[str]):
         all_dist.add(dist)
     return all_dist
 
-def part1(input_lines: List[str]):
+
+def part1(input_lines: list[str]):
     return min(get_all_distances(input_lines))
 
 
-def part2(input_lines: List[str]):
+def part2(input_lines: list[str]):
     return max(get_all_distances(input_lines))
+
 
 if __name__ == "__main__":
     # print(part1(testInput.splitlines()))
