@@ -1,0 +1,20 @@
+[project]
+name = "adventofcode"
+version = "0.1.0"
+description = "Brett's Advent of Code repository"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "requests",
+  "networkx",
+  "textual",
+  "rich",
+  "typing_extensions",
+  "platformdirs",
+  "urllib3",
+  "pyperclip",
+  "pygments",
+  "idna",
+  "certifi",
+  "chardet"
+]
