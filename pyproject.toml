@@ -3,7 +3,7 @@ name = "adventofcode"
 version = "0.1.0"
 description = "Brett's Advent of Code repository"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 dependencies = [
   "requests",
   "networkx",
@@ -16,5 +16,5 @@ dependencies = [
   "pygments",
   "idna",
   "certifi",
-  "chardet"
+  "chardet",
 ]
